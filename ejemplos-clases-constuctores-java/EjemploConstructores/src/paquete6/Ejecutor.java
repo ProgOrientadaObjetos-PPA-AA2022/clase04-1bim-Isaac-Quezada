@@ -10,6 +10,7 @@ public class Ejecutor {
         // Se crea un objeto haciendo referencia al constructor sin 
         // argumentos
         FacturaTelefonica fac = new FacturaTelefonica();
+        fac.calcularValorFactura();
         System.out.println("Objeto sin argumentos\n");
         System.out.printf("Número telefónico: %s\n"
                 + "Minutos mes: %.2f\nValor minuto: %.2f\n"
@@ -24,8 +25,8 @@ public class Ejecutor {
         double minutos = 100;
         double valorMinutos = 0.25;
         
-        FacturaTelefonica fac2 = new FacturaTelefonica(numero, minutos, 
-                valorMinutos);
+        FacturaTelefonica fac2 = new FacturaTelefonica(numero, minutos, valorMinutos);
+        fac2.calcularValorFactura();
         System.out.println("\nObjeto con argumentos\n");
         System.out.printf("Número telefónico: %s\n"
                 + "Minutos mes: %.2f\nValor minuto: %.2f\n"
@@ -33,5 +34,20 @@ public class Ejecutor {
                 fac2.obtenerMinutosMes(),
                 fac2.obtenerValorMinuto(),
                 fac2.obtenerValorFactura());
+        
+        
+        
+        
+        FacturaTelefonica fac3 = new FacturaTelefonica("0987022435");
+        fac3.establecerMinutosMes(10);
+        fac3.establecerValorMinuto(0.5);
+        fac3.calcularValorFactura();
+        System.out.println("\nObjeto con argumentos\n");
+        System.out.printf("Número telefónico: %s\n"
+                + "Minutos mes: %.2f\nValor minuto: %.2f\n"
+                + "Valor factura: %.2f\n", fac3.obtenerNumeroTelefono(),
+                fac3.obtenerMinutosMes(),
+                fac3.obtenerValorMinuto(),
+                fac3.obtenerValorFactura());
     }
 }

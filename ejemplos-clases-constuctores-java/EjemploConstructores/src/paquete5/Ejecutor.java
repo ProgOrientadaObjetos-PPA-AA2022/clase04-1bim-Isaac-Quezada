@@ -13,8 +13,17 @@ public class Ejecutor {
         double minutos = 100;
         double valorMinutos = 0.25;
         
-        FacturaTelefonica fac = new FacturaTelefonica(numero, minutos, 
-                valorMinutos);
+        FacturaTelefonica fac = new FacturaTelefonica(numero, minutos, valorMinutos);
+        fac.calcularValorFactura();
+        System.out.printf("Número telefónico: %s\n"
+                + "Minutos mes: %.2f\nValor minuto: %.2f\n"
+                + "Valor factura: %.2f\n", fac.obtenerNumeroTelefono(),
+                fac.obtenerMinutosMes(),
+                fac.obtenerValorMinuto(),
+                fac.obtenerValorFactura());
+        
+        fac.establecerValorMinuto(0.90);
+        fac.calcularValorFactura();
         System.out.printf("Número telefónico: %s\n"
                 + "Minutos mes: %.2f\nValor minuto: %.2f\n"
                 + "Valor factura: %.2f\n", fac.obtenerNumeroTelefono(),
